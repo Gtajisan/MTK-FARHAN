@@ -35,8 +35,8 @@ sudo apt install python3 git libusb-1.0-0 python3-pip
 
 #### Grab files 
 ```
-git clone https://github.com/bkerler/mtkclient
-cd mtkclient
+git clone https://github.com/Gtajisan/MTK-FARHAN
+cd MTK-FARHAN
 pip3 install -r requirements.txt
 python3 setup.py build
 python3 setup.py install
@@ -62,8 +62,8 @@ Make sure to reboot after adding the user to dialout/plugdev.
 
 #### Grab files and install
 ```
-git clone https://github.com/bkerler/mtkclient
-cd mtkclient
+git clone https://github.com/Gtajisan/MTK-FARHAN
+cd MTK-FARHAN
 pip3 install -r requirements.txt
 ```
 
