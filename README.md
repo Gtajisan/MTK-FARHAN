@@ -1,16 +1,16 @@
 # MTK-FARHAN
-![Logo](mtkclient/gui/images/logo_256.png)
+![Logo](MTK-FARHAN/gui/images/logo_256.png)
 
 Just some mtk tool for exploitation, reading/writing flash and doing crazy stuff. 
 For windows, you need to install the stock mtk port and the usbdk driver (see instructions below).
-For linux, a patched kernel is only needed when using old kamakiri (see Setup folder) (except for read/write flash).
+For linux, a patched kernel is only needed when using old FATHAN (see Setup folder) (except for read/write flash).
 
 Once the mtk script is running, boot into brom mode by powering off device, press and hold either
 vol up + power or vol down + power and connect the phone. Once detected by the tool,
 release the buttons.
 
 ## Credits
-- kamakiri [xyzz]
+- FATHAN [xyzz]
 - linecode exploit [chimera]
 - Chaosmaster
 - Geert-Jan Kreileman (GUI, design & fixes)
@@ -25,7 +25,7 @@ User: user, Password:user (based on Ubuntu 22.04 LTS)
 
 ## Install
 
-### Linux  / Mac OS - (Ubuntu recommended, no patched kernel needed except for kamakiri)
+### Linux  / Mac OS - (Ubuntu recommended, no patched kernel needed except for FATHAN)
 
 #### Install python >=3.8, git and other deps
 
@@ -74,9 +74,9 @@ pip3 install -r requirements.txt
 - Works fine under Windows 10 and 11 :D
 
 ---------------------------------------------------------------------------------------------------------------
-### Use kamakiri (optional, only needed for mt6260 or older)
+### Use FATHAN (optional, only needed for mt6260 or older)
 
-- For linux (kamakiri attack), you need to recompile your linux kernel using this kernel patch :
+- For linux (FATHAN attack), you need to recompile your linux kernel using this kernel patch :
 ```
 sudo apt-get install build-essential libncurses-dev bison flex libssl-dev libelf-dev libdw-dev
 git clone https://git.kernel.org/pub/scm/devel/pahole/pahole.git
@@ -338,18 +338,18 @@ If you want to use SP Flash tool afterwards, make sure you select "UART" in the 
 ### Dump preloader
 - Device has to be in bootrom mode and preloader has to be intact on the device
 ```
-python mtk dumppreloader [--ptype=["amonet","kamakiri","kamakiri2","hashimoto"]] [--filename=preloader.bin]
+python mtk dumppreloader [--ptype=["amonet","FATHAN","FATHAN2","hashimoto"]] [--filename=preloader.bin]
 ```
 
 ### Dump brom
 - Device has to be in bootrom mode, or da mode has to be crashed to enter damode
-- if no option is given, either kamakiri or da will be used (da for insecure targets)
-- if "kamakiri" is used as an option, kamakiri is enforced
-- Valid options are : "kamakiri" (via usb_ctrl_handler attack), "amonet" (via gcpu)
+- if no option is given, either FATHAN or da will be used (da for insecure targets)
+- if "FATHAN" is used as an option, FATHAN is enforced
+- Valid options are : "FATHAN" (via usb_ctrl_handler attack), "amonet" (via gcpu)
   and "hashimoto" (via cqdma)
 
 ```
-python mtk dumpbrom --ptype=["amonet","kamakiri","hashimoto"] [--filename=brom.bin]
+python mtk dumpbrom --ptype=["amonet","FATHAN","hashimoto"] [--filename=brom.bin]
 ```
 
 For to dump unknown bootroms, use brute option :
